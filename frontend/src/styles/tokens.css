@@ -1,0 +1,185 @@
+/* ==========================================================================
+   PrepPulse Design System Tokens
+   Strict 4px grid, DM Sans + JetBrains Mono, warm minimal palette
+   ========================================================================== */
+
+:root {
+  /* Light Theme Palette */
+  --bg-app: #FAFAF8;
+  --surface: #FFFFFF;
+  --sidebar: #F3F2EE;
+  --border: #E6E4DE;
+  --border-focus: #2F6F5E;
+
+  --text-primary: #1C1B19;
+  --text-secondary: #6B6860;
+  --text-muted: #8E8B83;
+  --text-inverse: #FFFFFF;
+
+  --accent: #2F6F5E;
+  --accent-hover: #265B4D;
+  --accent-subtle: #EBF3F0;
+  --accent-text: #1B453A;
+
+  --bubble-own: #2F6F5E;
+  --bubble-own-text: #FFFFFF;
+  --bubble-other: #F1EFEA;
+  --bubble-other-text: #1C1B19;
+
+  --online-dot: #3BA776;
+  --offline-dot: #9E9B93;
+
+  --status-error: #D64545;
+  --status-error-bg: #FDF2F2;
+  --status-error-border: #F8B4B4;
+
+  --status-warning: #D97706;
+  --status-warning-bg: #FFFBEB;
+
+  --shadow-floating: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-modal: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+  /* Typography */
+  --font-ui: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --text-xs: 12px;
+  --text-meta: 13px;
+  --text-item: 14px;
+  --text-body: 15px;
+  --text-subhead: 16px;
+  --text-title: 20px;
+  --text-hero: 24px;
+  --line-height-base: 1.5;
+
+  /* 4px Spacing Grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;   /* inputs, buttons */
+  --radius-md: 12px;  /* bubbles, modals */
+  --radius-full: 9999px; /* presence dots */
+
+  /* Transitions */
+  --transition-fast: 140ms ease-out;
+
+  /* Layout dimensions */
+  --rail-width: 64px;
+  --sidebar-width: 320px;
+  --info-panel-width: 320px;
+}
+
+[data-theme="dark"] {
+  /* Warm grey dark mode (warm #161614, never pure black) */
+  --bg-app: #161614;
+  --surface: #1E1E1B;
+  --sidebar: #1A1A18;
+  --border: #2C2C28;
+  --border-focus: #3E8F7A;
+
+  --text-primary: #EDEDEA;
+  --text-secondary: #9B9890;
+  --text-muted: #6B6860;
+  --text-inverse: #161614;
+
+  --accent: #3E8F7A;
+  --accent-hover: #4CA48D;
+  --accent-subtle: #1C2D27;
+  --accent-text: #A8E1D3;
+
+  --bubble-own: #3E8F7A;
+  --bubble-own-text: #FFFFFF;
+  --bubble-other: #242421;
+  --bubble-other-text: #EDEDEA;
+
+  --online-dot: #48C78E;
+  --offline-dot: #5B5850;
+
+  --status-error: #EF5350;
+  --status-error-bg: #2C1818;
+  --status-error-border: #6B2929;
+
+  --status-warning: #F59E0B;
+  --status-warning-bg: #2B2313;
+
+  --shadow-floating: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-modal: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  background-color: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar styling - thin and visible on hover */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Accessibility: Focus rings */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
